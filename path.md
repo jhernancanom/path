@@ -10,29 +10,36 @@ and UNC paths.
 
 ## API
 
+
 ---------------------------------------------------- ------------------------------------------------
-`path.platform -> s`                                 get the current platform
-`path.default_sep([pl]) -> s`                        get the default separator for a platform
-`path.dev_alias(s) -> s|nil`                         check if a path is a Windows device alias
-`path.type(s, [pl]) -> type`                         get the path type
-`path.parse(s, [pl]) -> type, path[, drv|srv]`       break down a path to its basic parts
-`path.format(type, path, [drv|srv], pl) -> s`        put together a path from parsed parts
-`path.isabs(s, [pl]) -> is_abs, is_empty`            check if path is absolute, empty and valid
-`path.endsep(s, [pl], [sep], [dsep]) -> s, ok`       get/add/remove the ending separator
-`path.sep(s, [pl], [sep], ...) -> s`                 detect/set the path separator
-`path.long(s, [pl], [long]) -> s|nil`                get/set a Windows long absolute path
-`path.file(s, [pl]) -> s`                            get the last component of a path
-`path.nameext(s, [pl]) -> name, ext`                 split `path.file()` into name and extension
-`path.ext(s, [pl]) -> s`                             return only the extension from `path.nameext()`
-`path.dir(s, [pl]) -> s|nil`                         get the path without the last component
-`path.gsplit(s, [pl], [full]) ->iter() -> s, sep`    iterate over path's components
-`path.normalize(s, [pl], [opt]) -> s`                normalize a path in various ways
-`path.commonpath(s1, s2, [pl]) -> s|nil`             get the common prefix of two paths
-`path.depth(s, [pl]) -> n`                           get the number of non-empty path components
-`path.combine(p1, p2, [pl], [sep], [dsep]) -> s|nil` combine two paths if possible
-`path.abs(s, pwd, [pl], [sep], [dsep]) -> s|nil,err` convert relative path to absolute
-`path.rel(s, pwd, [pl], [sep], [dsep]) -> s|nil`     convert absolute path to relative
-`path.filename(s, [pl], [repl]) -> s|nil,err,code`   validate/make-valid filename
+
+```
+
+ path.platform -> s                                  get the current platform
+ path.default_sep([pl]) -> s                         get the default separator for a platform
+ path.dev_alias(s) -> s|nil                          check if a path is a Windows device alias
+ path.type(s, [pl]) -> type                          get the path type
+ path.parse(s, [pl]) -> type, path[, drv|srv]        break down a path to its basic parts
+ path.format(type, path, [drv|srv], pl) -> s         put together a path from parsed parts
+ path.isabs(s, [pl]) -> is_abs, is_empty             check if path is absolute, empty and valid
+ path.endsep(s, [pl], [sep], [dsep]) -> s, ok        get/add/remove the ending separator
+ path.sep(s, [pl], [sep], ...) -> s                  detect/set the path separator
+ path.long(s, [pl], [long]) -> s|nil                 get/set a Windows long absolute path
+ path.file(s, [pl]) -> s                             get the last component of a path
+ path.nameext(s, [pl]) -> name, ext                  split  path.file()  into name and extension
+ path.ext(s, [pl]) -> s                              return only the extension from  path.nameext() 
+ path.dir(s, [pl]) -> s|nil                          get the path without the last component
+ path.gsplit(s, [pl], [full]) ->iter() -> s, sep     iterate over path's components
+ path.normalize(s, [pl], [opt]) -> s                 normalize a path in various ways
+ path.commonpath(s1, s2, [pl]) -> s|nil              get the common prefix of two paths
+ path.depth(s, [pl]) -> n                            get the number of non-empty path components
+ path.combine(p1, p2, [pl], [sep], [dsep]) -> s|nil  combine two paths if possible
+ path.abs(s, pwd, [pl], [sep], [dsep]) -> s|nil,err  convert relative path to absolute
+ path.rel(s, pwd, [pl], [sep], [dsep]) -> s|nil      convert absolute path to relative
+ path.filename(s, [pl], [repl]) -> s|nil,err,code    validate/make-valid filename
+
+```
+
 ---------------------------------------------------- ------------------------------------------------
 
 In the table above, `pl` is for platform and can be `'win'` or `'unix'` and
